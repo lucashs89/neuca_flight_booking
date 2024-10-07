@@ -17,7 +17,7 @@ namespace neuca_flight_booking.Services
 		public Ticket BuyTicket(Client? client, Flight? flight, IList<IDiscount> discounts)
 		{
 			if (client == null) throw new ArgumentNullException(nameof(client));
-			if (flight == null) throw new ArgumentException(nameof(flight));
+			if (flight == null) throw new ArgumentNullException(nameof(flight));
 
 			decimal finalPrice = flight.Price;
 			var buyDate = DateTime.Now;
