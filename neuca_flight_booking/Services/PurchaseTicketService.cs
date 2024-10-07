@@ -12,11 +12,13 @@ namespace neuca_flight_booking.Services
 		public PurchaseTicketService()
 		{
 			_repository = new LocalListPurchaseRepository();
-
 		}
 
-		public Ticket BuyTicket(Client client, Flight flight, IList<IDiscount> discounts)
+		public Ticket BuyTicket(Client? client, Flight? flight, IList<IDiscount> discounts)
 		{
+			if (client == null) throw new ArgumentNullException(nameof(client));
+			if (flight == null) throw new ArgumentException(nameof(flight));
+
 			decimal finalPrice = flight.Price;
 			var buyDate = DateTime.Now;
 			var ticket = new Ticket(client, flight, buyDate);
@@ -50,7 +52,6 @@ namespace neuca_flight_booking.Services
 
 		public List<Ticket> GetTickets()
 		{
-
 			return _repository.GetTicketHistory();
 		}
 	}

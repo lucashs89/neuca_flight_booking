@@ -4,7 +4,7 @@ namespace neuca_flight_booking.Repositories
 {
 	public interface IFlightRepository
 	{
-		Flight GetById(string id);
+		Flight? GetById(string id);
 		bool AddFlight(Flight flight);
 		List<Flight> GetFlights();
 	}

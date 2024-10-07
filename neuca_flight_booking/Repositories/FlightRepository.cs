@@ -15,11 +15,10 @@ namespace neuca_flight_booking.Repositories
 			_flightRepository.Add(new Flight("KLM00003AFR", "Krakow", "Africa", 80, new DateTime(2024, 12, 13))); // Friday
 		}
 
-		public Flight GetById(string id)
+		public Flight? GetById(string id)
 		{
 			return _flightRepository.FirstOrDefault(x => x.FlightID == id);
 		}
-
 
 		public bool AddFlight(Flight flight)
 		{
@@ -35,7 +34,6 @@ namespace neuca_flight_booking.Repositories
 			{
 				return false;
 			}
-
 		}
 
 		public List<Flight> GetFlights()

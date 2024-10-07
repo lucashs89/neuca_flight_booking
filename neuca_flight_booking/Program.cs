@@ -33,7 +33,7 @@ var ticket3 = service.BuyTicket(customer3, searchedFlight, discountCriterias);
 
 Console.WriteLine("---------------Discounts - same flight to Africa on Thursday -------------------------------");
 
-Console.WriteLine($"Regular ticker price {searchedFlight.Price}");
+Console.WriteLine($"Regular ticker price {searchedFlight?.Price}");
 Console.WriteLine($"Customer {ticket.Client.FirstName} {ticket.Client.TenantType} ticket price: {ticket.Price} EUR; discounts: {string.Join(", ", ticket.DiscountsIncluded)}");
 Console.WriteLine($"Customer2 {ticket2.Client.FirstName} {ticket2.Client.TenantType}  ticket price: {ticket2.Price} EUR; discounts: {string.Join(", ", ticket2.DiscountsIncluded)}");
 Console.WriteLine($"Customer3 {ticket3.Client.FirstName} {ticket3.Client.TenantType} ticket price: {ticket3.Price} EUR; discounts: {string.Join(", ", ticket3.DiscountsIncluded)}");
@@ -48,7 +48,7 @@ ticket2 = service.BuyTicket(customer2, searchedFlight, discountCriterias);
 ticket3 = service.BuyTicket(customer3, searchedFlight, discountCriterias);
 
 Console.WriteLine("---------------Discounts - same flight to Krakow on Thursday -------------------------------");
-Console.WriteLine($"Regular ticker price {searchedFlight.Price}");
+Console.WriteLine($"Regular ticker price {searchedFlight?.Price}");
 Console.WriteLine($"Customer {ticket.Client.FirstName} {ticket.Client.TenantType} ticket price: {ticket.Price} EUR discounts: {string.Join(", ", ticket.DiscountsIncluded)}");
 Console.WriteLine($"Customer2 {ticket2.Client.FirstName} {ticket2.Client.TenantType} ticket price: {ticket2.Price} EUR discounts: {string.Join(", ", ticket2.DiscountsIncluded)}");
 Console.WriteLine($"Customer3 {ticket3.Client.FirstName} {ticket3.Client.TenantType} ticket price: {ticket3.Price} EUR discounts: {string.Join(", ", ticket3.DiscountsIncluded)}");
